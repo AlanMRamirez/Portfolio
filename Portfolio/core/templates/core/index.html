@@ -1,0 +1,73 @@
+{% extends 'core/base.html' %}
+{% block title %}Home{% endblock %}
+{% load static %}
+    {% block content %}
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To my Portfolio, I'm Alan</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-info btn-xl text-uppercase" href="#services">Technologies</a>
+            </div>
+        </header>
+        <!-- Technologies-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Technologies</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <!--<i class="fas fa-circle fa-stack-2x text-info"></i>-->
+                            <img src=" {% static 'core/assets/img/iconodjango.png' %} "/>
+                        </span>
+                        <h4 class="my-3">Django</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-info"></i>
+                            <i class="fas fa-cogs fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">API-REST with Django Rest Framework</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-info"></i>
+                            <i class="fab fa-python fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Python</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-info"></i>
+                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Html, Css, Js</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-info"></i>
+                            <i class="fab fa-deskpro fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">PostgreSQL</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-info"></i>
+                            <i class="fab fa-linux fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Linux</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+    {% endblock %}

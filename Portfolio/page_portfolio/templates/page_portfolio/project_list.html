@@ -1,0 +1,339 @@
+{% extends 'core/base.html' %}
+{% block title %}Projects{% endblock %}
+{% load static %}
+    {% block content %}
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light-info" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Portfolio</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    {% for project in object_list %}
+                    <div class="{% if project.project_miniature.id == 4 %}
+                    col-lg-4 col-sm-6 mb-4 mb-lg-0
+                    {% elif project.project_miniature.id == 5 %}
+                    col-lg-4 col-sm-6 mb-4 mb-sm-0
+                    {% else %}
+                    col-lg-4 col-sm-6 mb-4
+                    {% endif %} ">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="{% if project.project_miniature.order == 1 %}
+                            #portfolioModal1
+                            {% elif project.project_miniature.order == 2 %}
+                            #portfolioModal2
+                            {% elif project.project_miniature.order == 3 %}
+                            #portfolioModal3
+                            {% elif project.project_miniature.order == 4 %}
+                            #portfolioModal4
+                            {% elif project.project_miniature.order == 5 %}
+                            #portfolioModal5
+                            {% endif %}">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{{project.project_miniature.image.url}}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading"> {{project.project_miniature.title}} </div>
+                                <div class="portfolio-caption-subheading text-muted">{{project.project_miniature.category}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src=" {% static 'core/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    {% for project in object_list %}
+                                    {% if  project.project_miniature.order == 1%}
+                                    <h2 class="text-uppercase"> {{project.project_name}} </h2>
+                                    <p class="item-intro text-muted">{{project.subtitle}}</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{project.project_miniature.image.url}}" alt="..." />
+                                    <p>{{project.description|striptags}}</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Technologies:</strong>
+                                            {{project.technologies}}
+                                        </li>
+                                        <li>
+                                            <strong>Client:</strong>
+                                            {{project.client}}
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            {{project.project_miniature.category}}
+                                        </li>
+                                        <li>
+                                            <strong>Done:</strong>
+                                            {{project.date}}
+                                        </li>
+                                        <li>
+                                            <strong>Site:</strong>
+                                            <a href="{{project.url}}"> Taqueria</a>
+                                        </li>
+                                        {% if project.repo %}
+                                        <li>
+                                            <strong>Repo:</strong>
+                                            <a href="{{project.repo}}"> Github</a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src=" {% static 'core/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    {% for project in object_list %}
+                                    {% if  project.project_miniature.order == 2 %}
+                                    <h2 class="text-uppercase"> {{project.project_name}} </h2>
+                                    <p class="item-intro text-muted">{{project.subtitle}}</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{project.project_miniature.image.url}}" alt="..." />
+                                    <p>{{project.description|striptags}}</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Technologies:</strong>
+                                            {{project.technologies}}
+                                        </li>
+                                        <li>
+                                            <strong>Client:</strong>
+                                            {{project.client}}
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            {{project.project_miniature.category}}
+                                        </li>
+                                        <li>
+                                            <strong>Done:</strong>
+                                            {{project.date}}
+                                        </li>
+                                        <li>
+                                            <strong>Site:</strong>
+                                            <a href="{{project.url}}"> Taqueria</a>
+                                        </li>
+                                        {% if project.repo %}
+                                        <li>
+                                            <strong>Repo:</strong>
+                                            <a href="{{project.repo}}"> Github</a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src=" {% static 'core/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    {% for project in object_list %}
+                                    {% if  project.project_miniature.order == 3 %}
+                                    <h2 class="text-uppercase"> {{project.project_name}} </h2>
+                                    <p class="item-intro text-muted">{{project.subtitle}}</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{project.project_miniature.image.url}}" alt="..." />
+                                    <p>{{project.description|striptags}}</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Technologies:</strong>
+                                            {{project.technologies}}
+                                        </li>
+                                        <li>
+                                            <strong>Client:</strong>
+                                            {{project.client}}
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            {{project.project_miniature.category}}
+                                        </li>
+                                        <li>
+                                            <strong>Done:</strong>
+                                            {{project.date}}
+                                        </li>
+                                        <li>
+                                            <strong>Site:</strong>
+                                            <a href="{{project.url}}"> Taqueria</a>
+                                        </li>
+                                        {% if project.repo %}
+                                        <li>
+                                            <strong>Repo:</strong>
+                                            <a href="{{project.repo}}"> Github</a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src=" {% static 'core/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    {% for project in object_list %}
+                                    {% if  project.project_miniature.order == 4 %}
+                                    <h2 class="text-uppercase"> {{project.project_name}} </h2>
+                                    <p class="item-intro text-muted">{{project.subtitle}}</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{project.project_miniature.image.url}}" alt="..." />
+                                    <p>{{project.description|striptags}}</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Technologies:</strong>
+                                            {{project.technologies}}
+                                        </li>
+                                        <li>
+                                            <strong>Client:</strong>
+                                            {{project.client}}
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            {{project.project_miniature.category}}
+                                        </li>
+                                        <li>
+                                            <strong>Done:</strong>
+                                            {{project.date}}
+                                        </li>
+                                        <li>
+                                            <strong>Site:</strong>
+                                            <a href="{{project.url}}"> Taqueria</a>
+                                        </li>
+                                        {% if project.repo %}
+                                        <li>
+                                            <strong>Repo:</strong>
+                                            <a href="{{project.repo}}"> Github</a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src=" {% static 'core/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    {% for project in object_list %}
+                                    {% if  project.project_miniature.order == 5 %}
+                                    <h2 class="text-uppercase"> {{project.project_name}} </h2>
+                                    <p class="item-intro text-muted">{{project.subtitle}}</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{project.project_miniature.image.url}}" alt="..." />
+                                    <p>{{project.description|striptags}}</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Technologies:</strong>
+                                            {{project.technologies}}
+                                        </li>
+                                        <li>
+                                            <strong>Client:</strong>
+                                            {{project.client}}
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            {{project.project_miniature.category}}
+                                        </li>
+                                        <li>
+                                            <strong>Done:</strong>
+                                            {{project.date}}
+                                        </li>
+                                        <li>
+                                            <strong>Site:</strong>
+                                            <a href="{{project.url}}"> Taqueria</a>
+                                        </li>
+                                        {% if project.repo %}
+                                        <li>
+                                            <strong>Repo:</strong>
+                                            <a href="{{project.repo}}"> Github</a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    {% endblock %}
