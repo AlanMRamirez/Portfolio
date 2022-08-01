@@ -31,7 +31,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'core:home' %}">Main</a></li>
                         <li class="nav-item "><a class="nav-link {% if request.path == '/portfolio/' %} text-primary {% endif %}" href=" {% url 'page_portfolio:portfolio' %} ">Portfolio</a></li>
                         <li class="nav-item "><a class="nav-link {% if request.path == '/about/' %} text-primary {% endif %}" href="{% url 'about:about' %}">About</a></li>
-                        <li class="nav-item"><a class="nav-link {% if request.path == '/about/' %} text-primary {% endif %}" href=" {% url 'contact:contact' %} ">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link {% if request.path == '/contact/' %} text-primary {% endif %}" href=" {% url 'contact:contact' %} ">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -45,8 +45,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Copyright &copy; 2022 Alan Ernesto Mondragon Ramirez Todos los derechos reservados.</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-github"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://github.com/AlanMRamirez" aria-label="Twitter"><i class="fab fa-github"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/alan-ernesto-mondragon-ramirez-2a11bb247/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
