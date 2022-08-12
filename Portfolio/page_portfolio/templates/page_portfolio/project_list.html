@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">In this page is all, my projects done with django.</h3>
+                    <h3 class="section-subheading text-muted">In this page is all, my projects done with django and django-rest framework. <br> (for view description click on miniature)</h3>
                 </div>
                 <div class="row">
                     {% for project in object_list %}
@@ -83,10 +83,12 @@
                                             <strong>Done:</strong>
                                             {{project.date}}
                                         </li>
+                                        {% if project.url %}
                                         <li>
                                             <strong>Site:</strong>
                                             <a href="{{project.url}}"> Web</a>
                                         </li>
+                                        {% endif %}
                                         {% if project.repo %}
                                         <li>
                                             <strong>Repo:</strong>
@@ -140,10 +142,12 @@
                                             <strong>Done:</strong>
                                             {{project.date}}
                                         </li>
+                                        {% if project.url %}
                                         <li>
                                             <strong>Site:</strong>
                                             <a href="{{project.url}}"> Web</a>
                                         </li>
+                                        {% endif %}
                                         {% if project.repo %}
                                         <li>
                                             <strong>Repo:</strong>
@@ -197,10 +201,12 @@
                                             <strong>Done:</strong>
                                             {{project.date}}
                                         </li>
+                                        {% if project.url %}
                                         <li>
                                             <strong>Site:</strong>
                                             <a href="{{project.url}}"> Web</a>
                                         </li>
+                                        {% endif %}
                                         {% if project.repo %}
                                         <li>
                                             <strong>Repo:</strong>
@@ -254,10 +260,12 @@
                                             <strong>Done:</strong>
                                             {{project.date}}
                                         </li>
+                                        {% if project.url %}
                                         <li>
                                             <strong>Site:</strong>
                                             <a href="{{project.url}}"> Web</a>
                                         </li>
+                                        {% endif %}
                                         {% if project.repo %}
                                         <li>
                                             <strong>Repo:</strong>
@@ -311,10 +319,12 @@
                                             <strong>Done:</strong>
                                             {{project.date}}
                                         </li>
+                                        {% if project.url %}
                                         <li>
                                             <strong>Site:</strong>
                                             <a href="{{project.url}}"> Web</a>
                                         </li>
+                                        {% endif %}
                                         {% if project.repo %}
                                         <li>
                                             <strong>Repo:</strong>
